@@ -1,3 +1,6 @@
 [submodule "/home/leo/Work/EVA-S2/glance"]
 	path = /home/leo/Work/EVA-S2/glance
 	url = https://github.com/leonardonels/glance.git
+[submodule "glance-dashboard"]
+	path = glance-dashboard
+	url = https://github.com/leonardonels/glance.git
