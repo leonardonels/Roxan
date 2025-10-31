@@ -47,7 +47,7 @@ proxmox:
           ip: 192.168.178.161
           port: 9090
           tag: tunnel, invoke-ai
-          notes: "NVIDIA-Driver-535.104.05-Linux-x86_64.run --no-kernel-module"
+          notes: "NVIDIA-Driver-535.104.05-Linux-x86_64.run --no-kernel-module, https://invoke-ai.github.io/InvokeAI/installation/docker/"
           destination: docker
         - id: 107
           name: pihole
