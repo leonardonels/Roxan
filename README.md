@@ -9,7 +9,7 @@ submodules) and a few helpful notes to get started.
 
 Clone the repository and initialize submodules in one step:
 
-		git clone --recurse-submodules <superproject-url>
+		git clone --recurse-submodules https://github.com/leonardonels/Roxan.git
 
 If you've already cloned the repository, initialize and update submodules with:
 
