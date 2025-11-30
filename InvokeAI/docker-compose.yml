@@ -29,6 +29,7 @@ x-invokeai: &invokeai
       - ${HF_HOME:-~/.cache/huggingface}:${HF_HOME:-/invokeai/.cache/huggingface}
     tty: true
     stdin_open: true
+    restart: unless-stopped
 
 
 services:
