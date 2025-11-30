@@ -1,0 +1,28 @@
+services:
+  warp_macvlan:
+    image: cloudflare/cloudflared:latest
+    container_name: cloudflare-warp-connector
+    restart: unless-stopped
+    
+    cap_add:
+      - NET_ADMIN
+      - SYS_ADMIN
+      
+    environment:
+      - TUNNEL_TOKEN=${TUNNEL_TOKEN}
+    
+    command: tunnel --protocol http2 run
+    
+    networks:
+      lan_access:
+        ipv4_address: 192.168.178.200
+
+networks:
+  lan_access:
+    driver: macvlan
+    driver_opts:
+      parent: enp4s0
+    ipam:
+      config:
+        - subnet: 192.168.178.0/24
+          gateway: 192.168.178.1
