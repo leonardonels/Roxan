@@ -1,12 +1,12 @@
-[submodule "ref/glanceapp"]
-	path = ref/glanceapp
+[submodule "docs/glanceapp"]
+	path = docs/glanceapp
 	url = https://github.com/glanceapp/glance.git
-[submodule "ref/invokeai"]
-	path = ref/invokeai
+[submodule "docs/invokeai"]
+	path = docs/invokeai
 	url = https://github.com/invoke-ai/InvokeAI.git
-[submodule "ref/pi-hole"]
-	path = ref/pi-hole
+[submodule "docs/pi-hole"]
+	path = docs/pi-hole
 	url = https://github.com/pi-hole/docker-pi-hole.git
-[submodule "ref/nextcloud-aio"]
-	path = ref/nextcloud-aio
+[submodule "docs/nextcloud-aio"]
+	path = docs/nextcloud-aio
 	url = https://github.com/nextcloud/all-in-one.git
