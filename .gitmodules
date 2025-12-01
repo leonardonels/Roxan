@@ -11,3 +11,6 @@
 [submodule "docs/nextcloud-aio"]
 	path = docs/nextcloud-aio
 	url = https://github.com/nextcloud/all-in-one.git
+[submodule "docs/immich"]
+	path = docs/immich
+	url = https://github.com/immich-app/immich.git
