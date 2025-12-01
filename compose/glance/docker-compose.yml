@@ -1,0 +1,15 @@
+services:
+  glance:
+    container_name: glance
+    image: glanceapp/glance
+    restart: unless-stopped
+    volumes:
+      - /opt/docker/roxan/data/glance/config:/app/config
+      - /opt/docker/roxan/data/glance/assets:/app/assets
+      - /mnt/data:/mnt/data:ro
+      - /etc/localtime:/etc/localtime:ro
+      # Optionally, also mount docker socket if you want to use the docker containers widget
+      - /var/run/docker.sock:/var/run/docker.sock:ro
+    ports:
+      - 9080:8080
+    env_file: .env

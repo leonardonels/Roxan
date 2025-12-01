@@ -1,0 +1,171 @@
+server:
+  assets-path: /app/assets
+
+theme:
+  # Note: assets are cached by the browser, changes to the CSS file
+  # will not be reflected until the browser cache is cleared (Ctrl+F5)
+  custom-css-file: /assets/user.css
+  background-color: 240 27 11
+  contrast-multiplier: 1.5
+  primary-color: 321 100 71
+  positive-color: 165 78 51
+  negative-color: 360 100 71
+
+pages:
+  - name: Home
+    hide-desktop-navigation: false
+    show-mobile-header: true
+    columns:
+      - size: small
+        widgets:
+          - type: weather
+            location: Modena, Italy
+            units: metric
+            hour-format: 24h
+            # Optionally hide the location from being displayed in the widget
+            # hide-location: true
+
+          - type: calendar
+            first-day-of-week: monday
+
+          - type: server-stats
+            servers:
+              - type: local
+                name: ROXAN
+                hide-mountpoints-by-default: true
+                mountpoints:
+                  "/":
+                    hide: false
+                    name: docker-host
+                  "/mnt/data":
+                    hide: false
+                    name: massive-storage
+
+          - type: docker-containers
+
+      - size: full
+        widgets:
+          - type: split-column
+            widgets:
+              - type: lobsters
+                sort-by: hot
+                tags:
+                  - hardware
+                  - networking
+                  - security
+                  - android
+                  - linux
+                  - vibecoding
+                limit: 20
+                collapse-after: 10
+
+              - type: hacker-news
+                limit: 15
+                collapse-after: 10
+                sort-by: top
+
+          - type: videos
+            channels:
+              - UCIdYIrInVnUwHVbogLj6bqA  # Riccardo Palombo
+              - UCgdTVe88YVSrOZ9qKumhULQ  # Hardware Haven
+              - UCsnGwSIHyoYN0kiINAGUKxg  # Wolfgang's Channel
+              - UC9x0AN7BWHpCDHSm9NiJFJQ  # Network Chuck
+              - UCRYOj4DmyxhBVrdvbsUwmAA  # Optimum Tech
+              - UCWa1XQsNX1xk4uMIPw7mM0g  # PC SNAP
+              - UCBpFmXURDoUpKGj43Uot0Ag  # ITG Gear
+              - UCGHzpEcSwfBQJAitgw2pgVQ  # Mr Matt Lee
+            limit: 64
+            style: horizontal-list
+  
+      - size: small
+        widgets:
+          - type: custom-api
+            title: Steam Specials
+            cache: 12h
+            frameless: false
+            url: https://store.steampowered.com/api/featuredcategories?cc=us
+            template: |
+              <ul class="list list-gap-10 collapsible-container" data-collapse-after="5">
+              {{ range .JSON.Array "specials.items" }}
+                <li>
+                  <a class="size-h4 color-highlight block text-truncate" href="https://store.steampowered.com/app/{{ .Int "id" }}/">{{ .String "name" }}</a>
+                  <ul class="list-horizontal-text">
+                    <li>{{ div (.Int "final_price" | toFloat) 100 | printf "$%.2f" }}</li>
+                    {{ $discount := .Int "discount_percent" }}
+                    <li{{ if ge $discount 40 }} class="color-positive"{{ end }}>{{ $discount }}% off</li>
+                  </ul>
+                </li>
+              {{ end }}
+              </ul>
+                  
+          - type: monitor
+            cache: 1m
+            title: Services
+            sites:
+              - title: pi-hole
+                url: https://pi-hole.leonardonels.com/admin
+                icon: https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/png/pi-hole.png
+              - title: nextcloud
+                url: https://nextcloud.leonardonels.com/
+                icon: https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/png/nextcloud-white.png
+              - title: invoke-ai
+                url: https://invoke-ai.leonardonels.com/
+                icon: https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/png/invoke-ai.png
+              - title: crafty
+                url: https://crafty.leonardonels.com/
+                icon: https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/png/minecraft.png
+              - title: open-ai
+                url: https://openai.leonardonels.com/
+                icon: https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/png/open-webui-light.png
+              - title: floratech
+                url: https://floratech.leonardonels.com
+                icon: https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/png/paperless-ng.png
+  
+  - name: Weather
+    columns:
+      - size: full
+        widgets:
+          - type: split-column
+            max-columns: 4
+            widgets:
+              - type: weather
+                location: Pievepelago, Italy
+                units: metric
+                hour-format: 24h
+                # Optionally hide the location from being displayed in the widget
+                # hide-location: true
+
+              - type: weather
+                location: Pavullo, Italy
+                units: metric
+                hour-format: 24h
+                # Optionally hide the location from being displayed in the widget
+                # hide-location: true
+
+              - type: weather
+                location: Abetone, Italy
+                units: metric
+                hour-format: 24h
+                # Optionally hide the location from being displayed in the widget
+                # hide-location: true
+
+              - type: weather
+                location: Passo del Cerreto, Italy
+                units: metric
+                hour-format: 24h
+                # Optionally hide the location from being displayed in the widget
+                # hide-location: true
+
+              - type: weather
+                location: Passo della Futa, Italy
+                units: metric
+                hour-format: 24h
+                # Optionally hide the location from being displayed in the widget
+                # hide-location: true
+
+              - type: weather
+                location: Stilfser Joch, Italy
+                units: metric
+                hour-format: 24h
+                # Optionally hide the location from being displayed in the widget
+                # hide-location: true
