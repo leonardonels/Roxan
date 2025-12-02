@@ -14,3 +14,9 @@
 [submodule "docs/immich"]
 	path = docs/immich
 	url = https://github.com/immich-app/immich.git
+[submodule "docs/ollama"]
+	path = docs/ollama
+	url = https://github.com/ollama/ollama.git
+[submodule "docs/portainer-io"]
+	path = docs/portainer-io
+	url = https://github.com/portainer/portainer-compose.git

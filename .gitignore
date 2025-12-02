@@ -4,3 +4,12 @@
 # InvokeAI data
 data/invokeai/*
 !data/invokeai/.gitkeep
+
+# ollama data
+data/ollama/*
+!data/ollama/.gitkeep
+
+# Portainer data
+data/portainer-io/*
+!data/portainer-io/.gitkeep
+

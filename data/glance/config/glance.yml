@@ -28,20 +28,40 @@ pages:
           - type: calendar
             first-day-of-week: monday
 
-          - type: server-stats
-            servers:
-              - type: local
-                name: ROXAN
-                hide-mountpoints-by-default: true
-                mountpoints:
-                  "/":
-                    hide: false
-                    name: docker-host
-                  "/mnt/data":
-                    hide: false
-                    name: massive-storage
-
-          - type: docker-containers
+          - type: monitor
+            cache: 1m
+            title: Services
+            sites:
+              - title: portainer
+                url: https://portainer.leonardonels.com/
+                icon: https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/png/portainer-dark.png
+              - title: pi-hole
+                url: https://pi-hole.leonardonels.com/admin
+                icon: https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/png/pi-hole.png
+              - title: bitwarden
+                url: https://vault.leonardonels.com/
+                icon: https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/png/bitwarden.png
+              - title: invoke-ai
+                url: https://invoke-ai.leonardonels.com/
+                icon: https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/png/invoke-ai.png
+              - title: nextcloud
+                url: https://nextcloud.leonardonels.com/
+                icon: https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/png/nextcloud-white.png
+              - title: immich
+                url: https://immich.leonardonels.com/
+                icon: https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/png/immich.png
+              - title: home-assistant
+                url: https://home.leonardonels.com/
+                icon: https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/png/home-assistant.png
+              - title: open-ai
+                url: https://openai.leonardonels.com/
+                icon: https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/png/open-webui-light.png
+              - title: crafty
+                url: https://crafty.leonardonels.com/
+                icon: https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/png/minecraft.png
+              - title: floratech
+                url: https://floratech.leonardonels.com
+                icon: https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/png/paperless-ng.png
 
       - size: full
         widgets:
@@ -97,30 +117,23 @@ pages:
                 </li>
               {{ end }}
               </ul>
+
+          - type: server-stats
+            servers:
+              - type: local
+                name: ROXAN
+                hide-mountpoints-by-default: true
+                mountpoints:
+                  "/":
+                    hide: false
+                    name: docker-host
+                  "/mnt/data":
+                    hide: false
+                    name: massive-storage
+
+          - type: docker-containers
                   
-          - type: monitor
-            cache: 1m
-            title: Services
-            sites:
-              - title: pi-hole
-                url: https://pi-hole.leonardonels.com/admin
-                icon: https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/png/pi-hole.png
-              - title: nextcloud
-                url: https://nextcloud.leonardonels.com/
-                icon: https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/png/nextcloud-white.png
-              - title: invoke-ai
-                url: https://invoke-ai.leonardonels.com/
-                icon: https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/png/invoke-ai.png
-              - title: crafty
-                url: https://crafty.leonardonels.com/
-                icon: https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/png/minecraft.png
-              - title: open-ai
-                url: https://openai.leonardonels.com/
-                icon: https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/png/open-webui-light.png
-              - title: floratech
-                url: https://floratech.leonardonels.com
-                icon: https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/png/paperless-ng.png
-  
+
   - name: Weather
     columns:
       - size: full

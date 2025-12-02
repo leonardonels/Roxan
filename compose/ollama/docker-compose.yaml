@@ -1,0 +1,33 @@
+services:
+  ollama:
+    image: ollama/ollama
+    container_name: ollama
+    ports:
+      - "11434:11434"
+    volumes:
+      - /opt/docker/roxan/data/ollama:/root/.ollama
+    restart: unless-stopped
+    # Uncomment the section below if you have an NVIDIA GPU
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              count: 1
+              capabilities: [gpu]
+
+  # --- Fast Background Worker (Makes Nextcloud AI Instant) ---
+  nextcloud-worker:
+    image: docker:cli
+    container_name: nextcloud-worker
+    restart: unless-stopped
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock:ro
+    entrypoint: ["/bin/sh", "-c"]
+    command:
+      - |
+        echo "Starting AI Worker..."
+        while true; do
+           docker exec -u www-data nextcloud-aio-nextcloud php occ background-job:worker 'OC\TaskProcessing\SynchronousBackgroundJob' || true
+           sleep 1
+        done
