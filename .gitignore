@@ -13,3 +13,10 @@ data/ollama/*
 data/portainer-io/*
 !data/portainer-io/.gitkeep
 
+# Vaultwarden data
+data/vaultwarden/*
+!data/vaultwarden/.gitkeep
+
+# Crafty data
+data/crafty/*
+!data/crafty/.gitkeep

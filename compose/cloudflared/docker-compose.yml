@@ -9,6 +9,8 @@ services:
     command: tunnel --no-autoupdate run
     networks:
       - cloudflare-tunnel-net
+    dns:
+      - 1.1.1.1
 networks:
   cloudflare-tunnel-net:
     driver: bridge

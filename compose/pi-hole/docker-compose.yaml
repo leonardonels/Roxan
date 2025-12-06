@@ -3,18 +3,20 @@ services:
   pihole:
     container_name: pihole
     image: pihole/pihole:latest
-    ports:
-      # DNS Ports
-      - "53:53/tcp"
-      - "53:53/udp"
-      # Default HTTP Port
-      - "80:80/tcp"
-      # Default HTTPs Port. FTL will generate a self-signed certificate
-      - "443:443/tcp"
-      # Uncomment the line below if you are using Pi-hole as your DHCP server
-      #- "67:67/udp"
-      # Uncomment the line below if you are using Pi-hole as your NTP server
-      #- "123:123/udp"
+    # network -> to allow pi-hole to be the dhcp server without virtual interface and dedicated ip address
+    network_mode: "host"  # bridge
+#    ports:
+#      # DNS Ports
+#      - "53:53/tcp"
+#      - "53:53/udp"
+#      # Default HTTP Port
+#      - "80:80/tcp"
+#      # Default HTTPs Port. FTL will generate a self-signed certificate
+#      - "443:443/tcp"
+#      # Uncomment the line below if you are using Pi-hole as your DHCP server
+#      - "67:67/udp"
+#      # Uncomment the line below if you are using Pi-hole as your NTP server
+#      #- "123:123/udp"
     dns:
       - 1.1.1.1
       - 8.8.8.8

@@ -38,8 +38,8 @@ pages:
               - title: pi-hole
                 url: https://pi-hole.leonardonels.com/admin
                 icon: https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/png/pi-hole.png
-              - title: bitwarden
-                url: https://vault.leonardonels.com/
+              - title: vaultwarden
+                url: https://vaultwarden.leonardonels.com/
                 icon: https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/png/bitwarden.png
               - title: invoke-ai
                 url: https://invoke-ai.leonardonels.com/
@@ -53,6 +53,9 @@ pages:
               - title: home-assistant
                 url: https://home.leonardonels.com/
                 icon: https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/png/home-assistant.png
+              - title: S.M.A.R.T. Monitor
+                url: https://smart.leonardonels.com/
+                icon: https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/png/terminal.png
               - title: open-ai
                 url: https://openai.leonardonels.com/
                 icon: https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/png/open-webui-light.png
@@ -132,7 +135,43 @@ pages:
                     name: massive-storage
 
           - type: docker-containers
-                  
+            hide-by-default: true
+            containers:
+              glance:
+                name: Glance
+                icon: si:glance
+                hide: false
+              pihole:
+                name: Pi-hole
+                icon: si:pi-hole
+                hide: false
+              vaultwarden:
+                name: Vaultwarden
+                icon: si:bitwarden
+                hide: false
+              portainer:
+                name: Portainer
+                icon: si:portainer
+                hide: false
+              ollama:
+                name: Ollama
+                icon: si:ollama
+                hide: false
+              invokeai-invokeai-cuda-1:
+                name: InvokeAI
+                hide: false
+              nextcloud-aio-mastercontainer:
+                name: Nextcloud
+                icon: si:nextcloud
+                hide: false
+              crafty_container:
+                name: Minecraft
+                icon: si:minecraft
+                hide: false
+              cloudflare-tunnel:
+                name: Cloudflared
+                icon: si:cloudflare
+                hide: false
 
   - name: Weather
     columns:
