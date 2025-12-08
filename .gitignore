@@ -20,3 +20,7 @@ data/vaultwarden/*
 # Crafty data
 data/crafty/*
 !data/crafty/.gitkeep
+
+# Immich data
+data/immich-app/*
+!data/immich-app/.gitkeep
