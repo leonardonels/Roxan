@@ -172,6 +172,10 @@ pages:
                 name: Cloudflared
                 icon: si:cloudflare
                 hide: false
+              immich_server:
+                name: Immich
+                icon: si:immich
+                hide: false
 
   - name: Weather
     columns:
