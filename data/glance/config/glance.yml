@@ -63,8 +63,8 @@ pages:
                 url: https://crafty.leonardonels.com/
                 icon: https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/png/minecraft.png
               - title: floratech
-                url: https://floratech.leonardonels.com
-                icon: https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/png/paperless-ng.png
+                url: https://floratech.leonardonels.com/
+                icon: https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwebstockreview.net%2Fimages%2Fplants-clipart-emoji-3.png&f=1&nofb=1&ipt=04771143245d27c08807b1516957ea70c5b85f741f49b033da2576758651844c
 
       - size: full
         widgets:
@@ -175,6 +175,10 @@ pages:
               immich_server:
                 name: Immich
                 icon: si:immich
+                hide: false
+              floratech_daphne:
+                name: FloraTech
+                icon: si:django
                 hide: false
 
   - name: Weather

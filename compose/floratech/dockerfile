@@ -1,0 +1,23 @@
+# Dockerfile
+FROM python:3.11-slim
+
+RUN apt-get update && apt-get install -y git && rm -rf /var/lib/apt/lists/*
+
+ENV PYTHONUNBUFFERED 1
+ENV DJANGO_SETTINGS_MODULE=FloraTech.settings
+
+# Define the directory where the app will live
+WORKDIR /opt/docker/roxan/data/floratech
+
+# IMPORTANT: Replace <YOUR_GIT_REPO> and <YOUR_BRANCH>
+RUN git clone https://github.com/leonardonels/floratech.git /opt/docker/roxan/data/floratech/repo
+WORKDIR /opt/docker/roxan/data/floratech/repo
+
+# Install dependencies
+RUN pip install --no-cache-dir Django daphne pandas numpy scikit-learn joblib requests pyTelegramBotAPI
+
+# Replace 'your_project_name' with your actual Django project name (where settings.py is)
+# **This step is crucial for production deployments.**
+RUN python manage.py collectstatic --noinput
+
+# The service command is set in docker-compose.yml

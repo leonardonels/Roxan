@@ -1,0 +1,15 @@
+services:
+  daphne:
+    build: .
+    container_name: floratech_daphne
+    restart: unless-stopped
+    ports:
+      - "12000:8000"
+    
+    # Run migrations and then start the Daphne server
+    # IMPORTANT: Replace 'your_project_name' with the name of your Django project module
+    # Daphne runs your ASGI application without relying on a Channels Layer (no Redis needed).
+    command: >
+      sh -c "python manage.py migrate --noinput &&
+             daphne -b 0.0.0.0 -p 8000 FloraTech.asgi:application"
+  
