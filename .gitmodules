@@ -23,3 +23,6 @@
 [submodule "docs/vaultwarden"]
 	path = docs/vaultwarden
 	url = https://github.com/dani-garcia/vaultwarden.git
+[submodule "docs/floratech-daphne"]
+	path = docs/floratech-daphne
+	url = https://github.com/leonardonels/floratech.git
