@@ -1,6 +1,10 @@
 # Environment variables
 *.env
 
+# pi-hole data
+data/pi-hole/*
+!data/pi-hole/.gitkeep
+
 # InvokeAI data
 data/invokeai/*
 !data/invokeai/.gitkeep
