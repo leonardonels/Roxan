@@ -50,6 +50,9 @@ pages:
               - title: immich
                 url: https://immich.leonardonels.com/
                 icon: https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/png/immich.png
+              - title: n8n
+                url: https://n8n.leonardonels.com/
+                icon: https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/png/n8n.png
               - title: home-assistant
                 url: https://home.leonardonels.com/
                 icon: https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/png/home-assistant.png
@@ -179,6 +182,10 @@ pages:
               floratech_daphne:
                 name: FloraTech
                 icon: si:django
+                hide: false
+              n8n:
+                name: n8n
+                icon: si:n8n
                 hide: false
 
   - name: Weather

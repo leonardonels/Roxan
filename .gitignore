@@ -28,3 +28,8 @@ data/crafty/*
 # Immich data
 data/immich-app/*
 !data/immich-app/.gitkeep
+
+# n8n data
+data/n8n/*
+!data/n8n/data/.gitkeep
+!data/n8n/files/.gitkeep
