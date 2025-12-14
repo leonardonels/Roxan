@@ -26,3 +26,9 @@
 [submodule "docs/floratech-daphne"]
 	path = docs/floratech-daphne
 	url = https://github.com/leonardonels/floratech.git
+[submodule "docs/gpu-hot"]
+	path = docs/gpu-hot
+	url = https://github.com/psalias2006/gpu-hot.git
+[submodule "compose/gpu-hot"]
+	path = compose/gpu-hot
+	url = https://github.com/leonardonels/gpu-hot.git

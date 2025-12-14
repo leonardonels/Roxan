@@ -56,6 +56,9 @@ pages:
               - title: home-assistant
                 url: https://home.leonardonels.com/
                 icon: https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/png/home-assistant.png
+              - title: gpu-hot
+                url: https://hot.leonardonels.com/
+                icon: https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/png/nvidia.png
               - title: S.M.A.R.T. Monitor
                 url: https://smart.leonardonels.com/
                 icon: https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/png/terminal.png
@@ -186,6 +189,10 @@ pages:
               n8n:
                 name: n8n
                 icon: si:n8n
+                hide: false
+              gpu-hot:
+                name: GPU Hot
+                icon: si:docker
                 hide: false
 
   - name: Weather
